@@ -1,6 +1,6 @@
 all:tcpsrv tcpcli
 tcpsrv:tcpsrv.cpp
-	g++ $^ -o $@
+	g++ -std=c++11 $^ -o $@
 tcpcli:tcpcli.cpp
-	g++ $^ -o $@
+	g++ -std=c++11 $^ -o $@
 

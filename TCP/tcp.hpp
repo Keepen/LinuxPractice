@@ -8,7 +8,7 @@
 //    2）接收数据
 //  6.关闭套接字
 
-
+#pragma once
 #include <iostream>
 #include <string>
 #include <sys/socket.h>
@@ -123,11 +123,18 @@ class TcpSocket{
     //8.关闭套接字
     bool Close(){
       if(_sockfd < 0){
-        cout << "关闭出错！！！" << endl;
+        cout << "关闭出错套接字！！！" << endl;
         return false;
       }
       close(_sockfd);
       return true;
+    }
+    int GetFd(){
+      return _sockfd;
+    }
+
+    void SetFd(int fd){
+      _sockfd = fd;
     }
 
     ~TcpSocket(){
